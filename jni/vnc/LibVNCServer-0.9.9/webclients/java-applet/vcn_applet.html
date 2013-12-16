@@ -1,0 +1,22 @@
+<!-- index.vnc - default html page for Java VNC viewer applet.  On any file
+     ending in .vnc, the HTTP server embedded in Xvnc will substitute the
+     following variables when preceded by a dollar: USER, DESKTOP, DISPLAY,
+     APPLETWIDTH, APPLETHEIGHT, WIDTH, HEIGHT, PORT, PARAMS.  Use two dollar
+     signs ($$) to get a dollar sign in the generated html. -->
+
+<HTML>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<TITLE>
+$USER's $DESKTOP desktop ($DISPLAY)
+</TITLE>
+
+</head> 
+
+<APPLET CODE=VncViewer.class
+        WIDTH=800 HEIGHT=480>
+<param name=PORT value=$PORT>
+<param name="Open New Window" value=yes>
+</APPLET>
+
+</HTML>

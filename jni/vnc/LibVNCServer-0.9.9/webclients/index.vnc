@@ -1,0 +1,51 @@
+<!-- index.vnc - default html page for Java VNC viewer applet.  On any file
+     ending in .vnc, the HTTP server embedded in Xvnc will substitute the
+     following variables when preceded by a dollar: USER, DESKTOP, DISPLAY,
+     APPLETWIDTH, APPLETHEIGHT, WIDTH, HEIGHT, PORT, PARAMS.  Use two dollar
+     signs ($$) to get a dollar sign in the generated html. -->
+
+<HTML>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<TITLE>
+$USER's $DESKTOP desktop ($DISPLAY_$IP_ADDR)
+</TITLE>
+<!--script src="status.js"></script-->
+</head> 
+<APPLET CODE=VncViewer.class ARCHIVE=java-applet/VncViewer20131119.jar
+        WIDTH=$APPLETWIDTH HEIGHT=$APPLETHEIGHT>
+<param name=PORT value=$PORT>
+<param name="Open New Window" value=yes>
+</APPLET>
+<br/>
+<br/>
+
+<!--If the above Java applet does not work, you can also try the new JavaScript-only noVNC viewer. You will need a HTML5-capable browser though. -->
+如果无法加载java插件，请点击下面按钮使用远程监控。
+<br />
+<br />
+
+<script language="JavaScript">
+    <!--
+    function start_novnc(){
+	var host = document.location.hostname;
+	// If there are at least two colons in there, it is likely an IPv6 address. Check for square brackets and add them if missing.
+	if(host.search(/^.*:.*:.*$/) != -1) {
+	   if(host.charAt(0) != "[")
+	      host = "[" + host;
+	   if(host.charAt(host.length-1) != "]")
+	      host = host + "]";
+	}
+	open("novnc/vnc_auto.html?host=" + host + "&port=$PORT&true_color=1&view_only=false");
+    }
+    -->
+</script>
+<form name="novnc_button_form">
+  <input type="button" name="novnc_button" value="点击这里连接远程监控" onClick='start_novnc()'>
+</form>
+
+<br/>
+<br/>
+<br/>
+
+</HTML>
