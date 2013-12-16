@@ -32,8 +32,9 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE    := libguac
 LOCAL_CFLAGS    := -O2 --std=c99 -I. -Ijni/guacd/pixman/pixman -Ijni/guacd/cairo/src -Ijni/guacd/cairo-extra -Ijni/guacd/pixman-extra -Wno-missing-field-initializers
-LOCAL_LDLIBS    := -L/cygdrive/d/android/ndk/platforms/android-18/arch-arm/usr/lib -ljnigraphics -lm -llog 
+LOCAL_LDLIBS    := -ljnigraphics -lm -llog 
 #-ljnigraphics
+#-L /cygdrive/d/android/ndk/platforms/android-18/arch-arm/usr/lib
 
 LOCAL_SRC_FILES := $(LIBGUACD_SRC)
 
