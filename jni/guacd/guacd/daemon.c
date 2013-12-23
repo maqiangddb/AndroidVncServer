@@ -374,6 +374,28 @@ int main(int argc, char* argv[]) {
     /* General */
     int retval;
 
+/*
+guacd currently takes four command-line options:
+
+    -b HOST 
+
+        Changes the host or address that guacd listens on.
+
+    -l PORT
+
+        Changes the port that guacd listens on (the default is port 4822).
+
+    -p PIDFILE
+
+        Causes guacd to write the PID of the daemon process to the specified
+        file. This is useful for init scripts and is used by the provided init
+        script.
+
+    -f
+        Causes guacd to run in the foreground, rather than automatically
+        forking into the background. 
+*/
+        
     /* Parse arguments */
     while ((opt = getopt(argc, argv, "l:b:p:C:K:f")) != -1) {
         if (opt == 'l') {

@@ -46,4 +46,4 @@ LOCAL_SHARED_LIBRARIES : = \
 
 LOCAL_MODULE := androidvncserver
 
-include $(BUILD_EXECUTABLE)
+include $(BUILD_SHARED_LIBRARIE)
