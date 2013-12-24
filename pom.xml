@@ -10,8 +10,13 @@
     <name>AndroidVncServer NDK</name>
 
     <modules>
-        <module>libandroidvncserver</module>
+        <module>libandroidvnc</module>
         <module>libcairo</module>
+        <module>libpng</module>
+        <module>libvncserver</module>
+        <module>libpixman</module>
+        <module>libguacd</module>
+        <module>libiconv</module>
     </modules>
 
     <dependencyManagement>
