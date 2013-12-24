@@ -52,8 +52,9 @@
 ### END INIT INFO
 
 prog="guacd"
-exec="@sbindir@/$prog"
-pidfile="/var/run/$prog.pid"
+#exec="@sbindir@/$prog"
+exec="/system/xbin/$prog"
+pidfile="/system/etc/$prog.pid"
 
 # Returns PID of currently running process, if any
 getpid() {
